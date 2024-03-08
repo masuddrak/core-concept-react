@@ -4,6 +4,7 @@ import viteLogo from '/vite.svg'
 import './App.css'
 import Conditional from './Conditional'
 import Singer from './Singer'
+import Counter from './Counter'
 
 
 function App() {
@@ -23,6 +24,7 @@ const handelar2=(num)=>{
 }
   return (<>
       <h1>Hello React js</h1>
+      <Counter></Counter>
       <button onClick={handelar1} style={{backgroundColor:"green",color:"white"}}>hello</button>
       <button onClick={()=>handelar2(10)} style={{backgroundColor:"green",color:"white"}}>hello</button>
      {
