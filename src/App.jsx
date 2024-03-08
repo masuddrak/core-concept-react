@@ -15,11 +15,18 @@ function App() {
     {id:4,name:"salman",age:45},
     {id:5,name:"salman",age:65},
   ]
-
+const handelar1=()=>{
+  alert("hello")
+}
+const handelar2=(num)=>{
+  alert(num+5)
+}
   return (<>
       <h1>Hello React js</h1>
+      <button onClick={handelar1} style={{backgroundColor:"green",color:"white"}}>hello</button>
+      <button onClick={()=>handelar2(10)} style={{backgroundColor:"green",color:"white"}}>hello</button>
      {
-      singers.map(singer=><Singer singer={singer}></Singer>)
+      singers.map(singer=><Singer key={singer.id} singer={singer}></Singer>)
      }
   </>)
 }
