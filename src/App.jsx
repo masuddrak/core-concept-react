@@ -5,10 +5,19 @@ import './App.css'
 import Conditional from './Conditional'
 import Singer from './Singer'
 import Counter from './Counter'
+import Friends from './Friends'
+import { useEffect } from 'react'
 
 
 function App() {
   const [count, setCount] = useState(0)
+  const  [friends,setFriends]=useState([])
+  useEffect(()=>{
+      fetch("https://jsonplaceholder.typicode.com/users")
+      .then(res=>res.json())
+      .then(data=>setFriends(data))
+  },[])
+
   const singers=[
     {id:1,name:"salman",age:25},
     {id:2,name:"salman",age:20},
@@ -24,6 +33,7 @@ const handelar2=(num)=>{
 }
   return (<>
       <h1>Hello React js</h1>
+    <Friends friends={friends}></Friends>
       <Counter></Counter>
       <button onClick={handelar1} style={{backgroundColor:"green",color:"white"}}>hello</button>
       <button onClick={()=>handelar2(10)} style={{backgroundColor:"green",color:"white"}}>hello</button>

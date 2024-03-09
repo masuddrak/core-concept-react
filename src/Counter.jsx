@@ -1,7 +1,14 @@
-import { useState } from "react"
+import { useEffect, useState } from "react"
 
 function Counter() {
     const [count, Setcount] = useState(0)
+    const  [friends,setFriends]=useState([])
+    useEffect(()=>{
+        fetch("https://jsonplaceholder.typicode.com/users")
+        .then(res=>res.json())
+        .then(data=>setFriends(data))
+    },[])
+
     const addHander = () => {
         const newCount = count + 1
         Setcount(newCount)

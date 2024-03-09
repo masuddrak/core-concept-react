@@ -1,5 +1,5 @@
 function Singer({singer}){
-    console.log(singer)
+    // console.log(singer)
     return (<>
 
     <h4>Name:{singer.name}</h4>
