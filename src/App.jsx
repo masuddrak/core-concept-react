@@ -7,6 +7,7 @@ import Singer from './Singer'
 import Counter from './Counter'
 import Friends from './Friends'
 import { useEffect } from 'react'
+import UseEfectDetails from './UseEfectDetails'
 
 
 function App() {
@@ -33,6 +34,7 @@ const handelar2=(num)=>{
 }
   return (<>
       <h1>Hello React js</h1>
+      <UseEfectDetails></UseEfectDetails>
     <Friends friends={friends}></Friends>
       <Counter></Counter>
       <button onClick={handelar1} style={{backgroundColor:"green",color:"white"}}>hello</button>
